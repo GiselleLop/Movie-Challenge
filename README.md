@@ -19,7 +19,7 @@ Explorar con más detalle una película específica es fácil; basta con hacer c
   
  ## PROTOTIPO DE BAJA FIDELIDAD:
 
- ![Image text|100](https://github.com/GiselleLop/Movie-Challenge/blob/ee78de7bb91c0446c0afa2f9b0ce29a8106a3e07/images/movie-list.png)
+ ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/ee78de7bb91c0446c0afa2f9b0ce29a8106a3e07/images/movie-list.png | width=100)
  
  ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/movie-list.png)
  
