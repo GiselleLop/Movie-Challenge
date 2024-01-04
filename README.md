@@ -18,8 +18,11 @@ La aplicación ha sido meticulosamente diseñada para ofrecer una experiencia de
 Explorar con más detalle una película específica es fácil; basta con hacer clic en ella para acceder a información detallada. Una vez revisada la información, los usuarios pueden regresar con facilidad a la página principal.
   
  ## Prototipo de baja fidelidad:
+
+ <div style="display: flex;">
 <img src="https://github.com/GiselleLop/Movie-Challenge/blob/ee78de7bb91c0446c0afa2f9b0ce29a8106a3e07/images/movie-list.png" width="400" />
 <img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/movie-detail.png" width="400" />
+ </div>
  
  ## Prototipo de alta fidelidad:
  
