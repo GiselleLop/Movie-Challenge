@@ -19,7 +19,7 @@ Explorar con más detalle una película específica es fácil; basta con hacer c
   
  ## Prototipo de baja fidelidad:
 
- <div style="display: flex; place-content: center;">
+ <div style="display: flex; place-content: center; aling-items: center;">
 <img src="https://github.com/GiselleLop/Movie-Challenge/blob/ee78de7bb91c0446c0afa2f9b0ce29a8106a3e07/images/movie-list.png" width="400" />
 <img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/movie-detail.png" width="400" />
  </div>
