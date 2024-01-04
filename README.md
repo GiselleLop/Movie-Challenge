@@ -33,8 +33,8 @@ Explorar con más detalle una película específica es fácil; basta con hacer c
  
  ## Resultado final:
 
-   <div style="display: flex; place-content: center;">
+   <div style="display: flex; place-content: center; aling-items: center;"">
 <img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESULTADO1.png" width="400" />
-<img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESUL2.png" width="800" />
+<img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESUL2.png" width="600" />
  </div>
  
