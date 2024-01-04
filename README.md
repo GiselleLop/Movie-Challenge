@@ -19,21 +19,22 @@ Explorar con más detalle una película específica es fácil; basta con hacer c
   
  ## Prototipo de baja fidelidad:
 
- <div style="display: flex;">
+ <div style="display: flex; justify-content: center;">
 <img src="https://github.com/GiselleLop/Movie-Challenge/blob/ee78de7bb91c0446c0afa2f9b0ce29a8106a3e07/images/movie-list.png" width="400" />
 <img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/movie-detail.png" width="400" />
  </div>
  
  ## Prototipo de alta fidelidad:
  
- ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/Captura%20de%20pantalla%202024-01-04%20123001.png)
- 
- ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/PROTO2.png)
+  <div style="display: flex; justify-content: center;">
+<img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/Captura%20de%20pantalla%202024-01-04%20123001.png" width="400" />
+<img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/PROTO2.png" width="400" />
+ </div>
  
  ## Resultado final:
- 
- ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESULTADO1.png)
- 
- ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESUL2.png)
- 
+
+   <div style="display: flex; justify-content: center;">
+<img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESULTADO1.png" width="400" />
+<img src="https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESUL2.png" width="400" />
+ </div>
  
