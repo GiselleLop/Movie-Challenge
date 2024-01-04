@@ -1,0 +1,12 @@
+<main class='footer-page'>
+    <ul class="pagination">
+        <li 
+        *ngFor="let page of pages" 
+        (click)="changePage(page)"
+        class="pagesitems" 
+        [ngClass]="{'active':page===currentPage}">
+        {{page}}
+    </li>
+
+    </ul>
+</main>

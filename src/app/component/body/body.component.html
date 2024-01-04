@@ -1,0 +1,50 @@
+
+<div class="filters" *ngIf="showFilters">
+  <div class="filtersContainer">
+    <h4>Filter by genre</h4>
+    <select id="genre" [(ngModel)]="selectedGenre" (ngModelChange)="filterData()">
+      <option selected>All</option>
+      <option *ngFor="let genre of genres.genres" [value]="genre.id">{{ genre.name }}</option>
+    </select>
+  </div>
+  <div class="filtersContainer">
+    <h4>Filter by order</h4>
+    <select id="order" (change)="handleOrderChange($event)">
+      <option>DESC</option>
+      <option>ASC</option>
+  </select>
+  </div>
+  
+</div>
+<main class="body-page">
+  <ul *ngIf="!selectedItem">
+    <li (click)="selectItem(item)"  *ngFor="let item of displayData">
+      
+    <img src='https://image.tmdb.org/t/p/original/{{item.poster_path}}'>
+    <div class="infoCard">
+      <h1>{{ item.original_title }}</h1>
+      <h4>{{item.release_date}}</h4>
+    </div>
+    
+    </li>
+
+  </ul>
+
+<div *ngIf="selectedItem" class="selectedFirst">
+  <button class="backMovies" (click)="backToMovies()">Back to the movie list</button>
+  <div class="selected-item">
+    <img src='https://image.tmdb.org/t/p/original/{{selectedItem.poster_path}}' class="posterSelected">
+      <div class="infoSelected">
+        <h4 class="titleSelected">{{ selectedItem.original_title }}</h4>
+        <h4 class="textSelected">Release year:<h4 class="selectedContentText"> {{selectedItem.release_date}}</h4></h4>
+        <h4  class="textSelected">Genres:<h4 class="selectedContentText"> {{getGenres(selectedItem.genre_ids)}}</h4></h4>
+        <h4  class="textSelected">Overview:<h4 class="selectedContentText"> {{selectedItem.overview}}</h4></h4>
+        <h4  class="textSelected">Stars:<h4 class="selectedContentText"> {{selectedItem.vote_average}}</h4></h4>
+      <div class="containerStars">
+        <div id="estrella" *ngFor="let item of stars"></div> 
+      </div>
+         </div>
+  </div>
+  </div> 
+   
+</main>

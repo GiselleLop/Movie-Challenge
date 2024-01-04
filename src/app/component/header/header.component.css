@@ -1,0 +1,49 @@
+
+@font-face {
+    font-family: Comic;
+    src: url(../../../../fonts/HeyComic.ttf) format('truetype');
+}
+@font-face {
+    font-family: kuda;
+    src: url(../../../../fonts/kuda.ttf) format('truetype');
+}
+@font-face {
+    font-family: scream;
+    src: url(../../../../fonts/SCREAM__.TTF) format('truetype');
+}
+@font-face {
+    font-family: potato;
+    src: url(../../../../fonts/Potato_sans-Bold.otf) format('truetype');
+}
+@font-face {
+    font-family: ligth;
+    src: url(../../../../fonts/KGWhYYouGoTtABeSoMeAn.ttf) format('truetype');
+}
+@font-face {
+    font-family: dk;
+    src: url(../../../../fonts/DKLongreach.otf) format('truetype');
+}
+
+.header-app {
+display: flex;
+place-content: center;
+align-items: center;
+flex-direction: column;
+margin: 3%;
+width: 100%;
+}
+.title {
+    font-family: dk;
+    letter-spacing: 4px;
+    color: white;
+    margin: 0%;
+    font-size: 290%;
+  
+}
+.credits {
+    font-weight: lighter;
+   font-family: ligth;
+   font-size: 15px;
+    color: white;
+    margin: 0%;
+}

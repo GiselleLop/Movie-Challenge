@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Comic;
+    src: url(../../../../fonts/HeyComic.ttf) format('truetype');
+}
+@font-face {
+    font-family: kuda;
+    src: url(../../../../fonts/kuda.ttf) format('truetype');
+}
+@font-face {
+    font-family: scream;
+    src: url(../../../../fonts/SCREAM__.TTF) format('truetype');
+}
+@font-face {
+    font-family: potato;
+    src: url(../../../../fonts/Potato_sans-Bold.otf) format('truetype');
+}
+@font-face {
+    font-family: ligth;
+    src: url(../../../../fonts/KGWhYYouGoTtABeSoMeAn.ttf) format('truetype');
+}
+@font-face {
+    font-family: dk;
+    src: url(../../../../fonts/DKLongreach.otf) format('truetype');
+}
+
+.footer-page {
+    color: white;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    gap: 5px;
+    align-self: flex-end;
+}
+ul {
+    gap: 10px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.pagesitems {
+    font-family: Comic;
+    padding: 5px;
+    background-color: black;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+  list-style:none;
+  border-radius: 5px;
+  
+}
+
+.active {
+background-color: white;
+color: black;
+}

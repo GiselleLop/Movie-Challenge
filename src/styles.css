@@ -1,0 +1,12 @@
+
+body {
+    background-image: url("../images/80ywr4mbxogncowbkjxc.gif");
+    background-color: black;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+app-root {
+    display: flex;
+}
