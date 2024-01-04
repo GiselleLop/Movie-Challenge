@@ -25,6 +25,14 @@ Explorar con más detalle una película específica es fácil; basta con hacer c
  
  ## PROTOTIPO DE ALTA FIDELIDAD:
  
+ ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/Captura%20de%20pantalla%202024-01-04%20123001.png)
+ 
+ ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/PROTO2.png)
+ 
  ## RESULTADO FINAL:
+ 
+ ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESULTADO1.png)
+ 
+ ![Image text](https://github.com/GiselleLop/Movie-Challenge/blob/main/images/RESUL2.png)
  
  
