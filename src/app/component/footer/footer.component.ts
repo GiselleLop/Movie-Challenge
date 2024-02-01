@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/services.service';
 import { SharedService } from 'src/app/services/shared.service';
-//import { PaginationService } from 'src/app/services/paginator.service';
 
 @Component({
   selector: 'app-footer',
@@ -40,7 +39,6 @@ export class FooterComponent implements OnInit {
     });
 
   }
-
   
   updatePagination() {
     this.totalPages = Math.ceil(this.data.length / this.itemsPerPage);

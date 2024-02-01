@@ -4,9 +4,13 @@
     <h4>Filter by genre</h4>
     <select id="genre" [(ngModel)]="selectedGenre" (ngModelChange)="filterData()">
       <option selected>All</option>
+      <!-- <a></a> -->
       <option *ngFor="let genre of genres.genres" [value]="genre.id">{{ genre.name }}</option>
+       <!-- <a></a> -->
     </select>
   </div>
+
+
   <div class="filtersContainer">
     <h4>Filter by order</h4>
     <select id="order" (change)="handleOrderChange($event)">

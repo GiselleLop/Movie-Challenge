@@ -4,7 +4,7 @@ import { SharedService } from 'src/app/services/shared.service';
 import { Subscription } from 'rxjs';
 import { FilterService } from 'src/app/services/filters.service';
 import { PaginationService } from 'src/app/services/paginator.service';
-//import { log } from 'util';
+
 
 @Component({
   selector: 'app-body',
@@ -18,7 +18,9 @@ export class BodyComponent implements OnInit, OnDestroy {
   dataAllPages: any = [];
   data: any = [];
   pages: any = {};
+  ///
   genres: any = {};
+  ///
   filteredData: any = [];
   selectedGenre: any = [];
   displayData: any = [];
@@ -50,6 +52,8 @@ export class BodyComponent implements OnInit, OnDestroy {
     });
 
       this.movieService.getDataAllPages().subscribe((data) => {
+        console.log(data);
+    
         this.dataAllPages = data.flat();
         this.filteredData = this.dataAllPages;
       });
@@ -59,7 +63,7 @@ export class BodyComponent implements OnInit, OnDestroy {
     this.AllDataSubscription?.unsubscribe();
   }
 
-  
+
   getGenresList() {
     this.movieService.getGenres().subscribe((genres) => {
       this.genres = genres;
@@ -135,8 +139,6 @@ export class BodyComponent implements OnInit, OnDestroy {
   }
 
   getDataAsc() {
-
-  //  this.sharedService.updateDisplayData(this.dataAllPages)
     this.sharedService.updateFilteredData(this.filteredData.reverse());
   }
 }
