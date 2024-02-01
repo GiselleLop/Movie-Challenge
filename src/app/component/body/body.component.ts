@@ -4,7 +4,8 @@ import { SharedService } from 'src/app/services/shared.service';
 import { Subscription } from 'rxjs';
 import { FilterService } from 'src/app/services/filters.service';
 import { PaginationService } from 'src/app/services/paginator.service';
-
+import { movie } from 'src/app/interfaces/movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -23,7 +24,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   ///
   filteredData: any = [];
   selectedGenre: any = [];
-  displayData: any = [];
+  displayData: movie[] = [];
   selectedItem: any = null;
   showFilters: boolean = true;
   genresMap: { [key: number]: string } = {};
@@ -33,7 +34,8 @@ export class BodyComponent implements OnInit, OnDestroy {
     private movieService: MovieService,
     private sharedService: SharedService,
     private filterService: FilterService,
-    private paginationService: PaginationService
+    private paginationService: PaginationService, 
+    private router: Router
   ) {
     this.sharedService.selectedItemEvent.subscribe((showFilters) => {
       this.showFilters = showFilters;
@@ -94,17 +96,19 @@ export class BodyComponent implements OnInit, OnDestroy {
     }
   }
 
-  selectItem(item: any) {
-    this.selectedItem = item;
-    this.sharedService.selectedItemEvent.emit(true);
-    this.showFilters = false;
-   this.getStarsOfMovies(this.selectedItem.vote_average)
+  viewDetailMovie(item: movie) {
+    localStorage.setItem('selectedMovie', JSON.stringify(item))
+    this.redirectToDetailView()
+   // }
+   // })
+   // this.showFilters = false;
+  // this.getStarsOfMovies(this.selectedItem.vote_average)
   }
   
-  backToMovies() {
-    this.selectedItem = null;
-    this.sharedService.selectedItemEvent.emit(false);
-    this.showFilters = true;
+
+
+  redirectToDetailView() {
+    this.router.navigate(['/movie-detail']);
   }
 
   getGenres(genreIds: number[]): string {

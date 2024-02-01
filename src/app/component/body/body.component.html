@@ -4,9 +4,7 @@
     <h4>Filter by genre</h4>
     <select id="genre" [(ngModel)]="selectedGenre" (ngModelChange)="filterData()">
       <option selected>All</option>
-      <!-- <a></a> -->
       <option *ngFor="let genre of genres.genres" [value]="genre.id">{{ genre.name }}</option>
-       <!-- <a></a> -->
     </select>
   </div>
 
@@ -21,20 +19,12 @@
   
 </div>
 <main class="body-page">
-  <ul *ngIf="!selectedItem">
-    <li (click)="selectItem(item)"  *ngFor="let item of displayData">
-      
-    <img src='https://image.tmdb.org/t/p/original/{{item.poster_path}}'>
-    <div class="infoCard">
-      <h1>{{ item.original_title }}</h1>
-      <h4>{{item.release_date}}</h4>
-    </div>
-    
-    </li>
+  <div class="moviesContainer" *ngIf="!selectedItem">
+    <app-movie (click)="viewDetailMovie(movie)" *ngFor="let movie of displayData" [movie] = 'movie'>
+  </app-movie>
+</div>
 
-  </ul>
-
-<div *ngIf="selectedItem" class="selectedFirst">
+<!-- <div *ngIf="selectedItem" class="selectedFirst">
   <button class="backMovies" (click)="backToMovies()">Back to the movie list</button>
   <div class="selected-item">
     <img src='https://image.tmdb.org/t/p/original/{{selectedItem.poster_path}}' class="posterSelected">
@@ -49,6 +39,6 @@
       </div>
          </div>
   </div>
-  </div> 
+  </div>  -->
    
 </main>
