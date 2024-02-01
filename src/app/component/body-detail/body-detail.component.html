@@ -1,0 +1,17 @@
+
+<div class="selectedFirst">
+    <app-buttons [btnName]="'Back to movie list'" [btnClass]="'btn-back'" (click)="backToMovies()"></app-buttons>
+  <div class="selected-item">
+    <img src='https://image.tmdb.org/t/p/original/{{selectedItem?.poster_path}}' class="posterSelected">
+      <div class="infoSelected">
+        <h4 class="titleSelected">{{ selectedItem?.original_title }}</h4>
+        <h4 class="textSelected">Release year:<h4 class="selectedContentText"> {{selectedItem?.release_date}}</h4></h4>
+         <!-- <h4  class="textSelected">Genres:<h4 class="selectedContentText"> {{getGenres(selectedItem?.genre_ids)}}</h4></h4>  -->
+        <h4  class="textSelected">Overview:<h4 class="selectedContentText"> {{selectedItem?.overview}}</h4></h4>
+        <h4  class="textSelected">Stars:<h4 class="selectedContentText"> {{selectedItem?.vote_average}}</h4></h4>
+      <div class="containerStars">
+         <!-- <div id="estrella" *ngFor="let item of stars"></div>   -->
+      </div>
+         </div>
+  </div>
+  </div>

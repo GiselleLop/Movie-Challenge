@@ -1,3 +1,29 @@
+@font-face {
+    font-family: light;
+    src: url(../fonts/KGWhYYouGoTtABeSoMeAn.ttf);
+}
+
+@font-face {
+    font-family: Comic;
+    src: url(../fonts/HeyComic.ttf) format('truetype');
+}
+@font-face {
+    font-family: kuda;
+    src: url(../fonts/kuda.ttf) format('truetype');
+}
+@font-face {
+    font-family: scream;
+    src: url(../fonts/SCREAM__.TTF) format('truetype');
+}
+@font-face {
+    font-family: potato;
+    src: url(../fonts/Potato_sans-Bold.otf) format('truetype');
+}
+
+@font-face {
+    font-family: dk;
+    src: url(../fonts/DKLongreach.otf) format('truetype');
+}
 body {
     background-image: url("../images/80ywr4mbxogncowbkjxc.gif");
     background-color: black;

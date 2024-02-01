@@ -1,7 +1,7 @@
 
 app-header {
 width: 100%;}
-app-body{
+.body-components{
     width: 100%;
     display: flex;
     place-content: center;

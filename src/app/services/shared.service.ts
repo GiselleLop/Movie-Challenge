@@ -1,10 +1,16 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import {BehaviorSubject } from 'rxjs';
+import { movie } from '../interfaces/movie';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
+  // selectedItemSource = new BehaviorSubject<movie | null>( null);
+  // selectedItem$ = this.selectedItemSource.asObservable();
+  
+
+  selectedItemEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   private currentPage = 1;
   
   getPage(): number {
@@ -28,5 +34,5 @@ export class SharedService {
   private dataFilteredRender = new BehaviorSubject<any[]>([]);
   filteredData$ = this.dataFilteredRender.asObservable();
 
-  selectedItemEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+  
 }

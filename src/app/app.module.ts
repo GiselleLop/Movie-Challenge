@@ -4,27 +4,32 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/services.service';
 import { AppComponent } from './app.component';
-import { InterfacesComponent } from './interfaces/interfaces.component';
 import { BodyComponent } from './component/body/body.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { ViewPrincipalComponent } from './view/view-principal/view-principal.component';
-import { AppRoutingModule, routing } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { SharedService } from './services/shared.service';
+import { ViewDetailComponent } from './view/view-detail/view-detail.component';
+import { BodyDetailComponent } from './component/body-detail/body-detail.component';
+import { MovieComponent } from './component/movie/movie.component';
+import { ButtonsComponent } from './component/buttons/buttons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InterfacesComponent,
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    ViewPrincipalComponent
+    ViewPrincipalComponent,
+    ViewDetailComponent,
+    BodyDetailComponent,
+    MovieComponent,
+    ButtonsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing,
     HttpClientModule,
     FormsModule
   ],
