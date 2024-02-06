@@ -8,13 +8,13 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-  currentPage: number = 1;
+
   totalItems: any = [];
   data: any = [];
-  itemsPerPage: number = 20;
-  page: number = 1;
+  //itemsPerPage: number = 20;
+  pageSelected: number = 1;
   totalPages: number = 0;
-  pages: any = [];
+  pages: number[] = [];
   displayData: any = [];
 
   constructor(
@@ -41,20 +41,21 @@ export class FooterComponent implements OnInit {
   }
   
   updatePagination() {
-    this.totalPages = Math.ceil(this.data.length / this.itemsPerPage);
+    this.totalPages = Math.ceil(this.data.length / 20);
     this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
-    this.paginatorData();
+   // this.paginatorData();
   }
 
   changePage(page: number) {
-    this.currentPage = page;
-    this.paginatorData();
+    this.pageSelected = page
+    this.sharedService.pageSelectedSubject.next(page)
+    //this.paginatorData();a
   }
 
-  paginatorData() {
-    const start = (this.currentPage - 1) * this.itemsPerPage;
-    const end = start + this.itemsPerPage;
-    this.displayData = this.data.slice(start, end);
-    this.sharedService.updateDisplayData(this.displayData);
-  }
+  // paginatorData() {
+  //   const start = (this.pageSelected - 1) * this.itemsPerPage;
+  //   const end = start + this.itemsPerPage;
+  //   this.displayData = this.data.slice(start, end);
+  //   this.sharedService.updateDisplayData(this.displayData);
+  // }
 }

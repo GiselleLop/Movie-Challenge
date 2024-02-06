@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {BehaviorSubject } from 'rxjs';
 import { movie } from '../interfaces/movie';
 
@@ -6,11 +6,6 @@ import { movie } from '../interfaces/movie';
   providedIn: 'root'
 })
 export class SharedService {
-  // selectedItemSource = new BehaviorSubject<movie | null>( null);
-  // selectedItem$ = this.selectedItemSource.asObservable();
-  
-
-  selectedItemEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   private currentPage = 1;
   
   getPage(): number {
@@ -21,17 +16,20 @@ export class SharedService {
     return genres.filter((element:any) => element.includes(type));
   }
 
-  updateDisplayData(data: any[]) {
-    this.displayDataSubject.next(data);
+  pageSelectedSubject = new BehaviorSubject<number>(1);
+  pageSelected$ = this.pageSelectedSubject.asObservable();
+  
+  paginatorData(pageSelected:number, data:movie[]) {
+    const start = (pageSelected - 1) * 20;
+    const end = start + 20;
+    return data.slice(start, end);
   }
-  private displayDataSubject = new BehaviorSubject<any[]>([]);
-  displayData$ = this.displayDataSubject.asObservable();
 
-  updateFilteredData(data: any[]) {
+  updateFilteredData(data: movie[]) {
     this.dataFilteredRender.next(data);
   }
 
-  private dataFilteredRender = new BehaviorSubject<any[]>([]);
+  private dataFilteredRender = new BehaviorSubject<movie[]>([]);
   filteredData$ = this.dataFilteredRender.asObservable();
 
   

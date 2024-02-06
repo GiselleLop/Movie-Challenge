@@ -9,6 +9,15 @@ border-style: none;
 font-family: light;
 font-size: 20px;
 }
-.btn-back:hover {
-color: white;
+.pagesitems {
+    font-family: Comic;
+    padding: 5px;
+    background-color: black;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+  list-style:none;
+  border-radius: 5px;
 }

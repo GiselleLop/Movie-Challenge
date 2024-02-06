@@ -19,8 +19,7 @@ export class MovieService {
     return of(updateUrl).pipe(mergeMap((url) => this.http.get<any>(url)));
   }
 
-  public getDataAllPages(): Observable<any[]> {
-    
+  public getDataAllPages(): Observable<any[]> { 
     const initialPage = 1;
     const maxPages = 30; 
     return this.getData(initialPage).pipe(
@@ -32,10 +31,9 @@ export class MovieService {
       map(data => data.results),
       toArray(),
     );
-  
   }
 
-  public getGenres(): Observable<any> {
-    return this.http.get(this.MOVIE_GENRES);
+  public getGenres(): Observable<[]> {
+    return this.http.get(this.MOVIE_GENRES) as Observable<[]>;
   }
 }

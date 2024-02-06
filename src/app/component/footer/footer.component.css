@@ -6,27 +6,9 @@
     gap: 5px;
     align-self: flex-end;
 }
-ul {
+.pagination {
     gap: 10px;
     display: flex;
     place-content: center;
     align-items: center;
-}
-.pagesitems {
-    font-family: Comic;
-    padding: 5px;
-    background-color: black;
-    border-style: solid;
-    border-color: white;
-    color: white;
-    font-weight: bolder;
-    font-size: 15px;
-  list-style:none;
-  border-radius: 5px;
-  
-}
-
-.active {
-background-color: white;
-color: black;
 }

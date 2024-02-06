@@ -9,9 +9,9 @@ import { SharedService } from 'src/app/services/shared.service';
 export class ViewPrincipalComponent implements OnInit {
   showFooter: boolean = true;
   constructor(private sharedService: SharedService) { 
-    this.sharedService.selectedItemEvent.subscribe((showFilters) => {
-      this.showFooter = !showFilters;
-    });
+    // this.sharedService.selectedItemEvent.subscribe((showFilters) => {
+    //   this.showFooter = !showFilters;
+    // });
   }
   ngOnInit(): void {
   }
