@@ -3,7 +3,6 @@ import { MovieService } from 'src/app/services/services.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { Subscription } from 'rxjs';
 import { FilterService } from 'src/app/services/filters.service';
-import { PaginationService } from 'src/app/services/paginator.service';
 import { movie } from 'src/app/interfaces/movie';
 import { Router } from '@angular/router';
 
@@ -16,133 +15,79 @@ export class BodyComponent implements OnInit, OnDestroy {
   private AllDataSubscription: Subscription | undefined;
 
   currentPage: number = 1;
-  dataAllPages: any = [];
-  data: any = [];
-  pages: any = {};
-  ///
-  genres: any = {};
-  ///
-  filteredData: any = [];
-  selectedGenre: any = [];
-  displayData: movie[] = [];
-  selectedItem: any = null;
-  showFilters: boolean = true;
-  genresMap: { [key: number]: string } = {};
-  stars:any = [];
+  dataAllPages: movie[] = [];
+  dataPeerPage: movie[] = [];
+  pageSelected: number = 1;
+  dataPrincipal: movie[] = [];
 
   constructor(
     private movieService: MovieService,
     private sharedService: SharedService,
     private filterService: FilterService,
-    private paginationService: PaginationService, 
     private router: Router
-  ) {
-    this.sharedService.selectedItemEvent.subscribe((showFilters) => {
-      this.showFilters = showFilters;
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.selectedGenre = 'All';
-    this.getGenresList();
-    this.paginationService.currentPage$.subscribe((page) => {
-      this.currentPage = page;
+
+    this.movieService.getDataAllPages().subscribe((data) => {
+      this.dataAllPages = data.flat();
+     this.dataPrincipal = data.flat();
+      this.moviesPeerPage()
+      console.log(this.dataPeerPage);
+     });
+
+     this.sharedService.pageSelected$.subscribe((page) => {
+      this.pageSelected = page;
+   this.moviesPeerPage()
     });
 
-    this.sharedService.displayData$.subscribe((displayData) => {
-      this.displayData = displayData;
+    this.sharedService.filteredData$.subscribe((data) => {
+      this.dataAllPages = data;
+      this.moviesPeerPage();
     });
 
-      this.movieService.getDataAllPages().subscribe((data) => {
-        console.log(data);
-    
-        this.dataAllPages = data.flat();
-        this.filteredData = this.dataAllPages;
-      });
+    this.filterService.optionFilterSelected$.subscribe(gender => {
+      if (gender === 'All') {
+      this.dataAllPages = this.dataPrincipal;
+        this.sharedService.updateFilteredData(this.dataAllPages);
+      } else if (!isNaN(Number(gender))){
+        this.dataAllPages = this.filterService.filterByGenre(
+          this.dataPrincipal,
+          gender)
+       
+        if (this.dataAllPages.length === 0) {
+          alert('No movies were found with this genre');
+        }
+        this.sharedService.updateFilteredData(this.dataAllPages);
+        
+      }
+      else if (gender === 'ASC' || gender === 'DESC') {
+      this.getDataAsc()
+      }
+    })
   }
 
   ngOnDestroy(): void {
     this.AllDataSubscription?.unsubscribe();
   }
 
-
-  getGenresList() {
-    this.movieService.getGenres().subscribe((genres) => {
-      this.genres = genres;
-     
-        this.genres.genres.forEach((genre: { id: number; name: string }) => {
-          this.genresMap[genre.id] = genre.name;
-        });
-      
-    });
-  }
-
-  objectKeys(obj: any) {
-    return Object.keys(obj);
-  }
-
-  filterData() {
-    if (this.selectedGenre !== 'All') {
-      this.filteredData = this.filterService.filterByGenre( this.dataAllPages, this.selectedGenre);
-      console.log(this.filteredData, '  filtered');
-      if (this.filteredData.length === 0) {
-        alert('No movies were found with this genre');
-      }
-      this.sharedService.updateFilteredData(this.filteredData);
-    } else {
-      this.filteredData = this.dataAllPages;
-      this.sharedService.updateFilteredData(this.filteredData);
-    
-    }
+  moviesPeerPage() {
+    this.dataPeerPage = this.sharedService.paginatorData(
+      this.pageSelected,
+      this.dataAllPages
+    );
   }
 
   viewDetailMovie(item: movie) {
-    localStorage.setItem('selectedMovie', JSON.stringify(item))
-    this.redirectToDetailView()
-   // }
-   // })
-   // this.showFilters = false;
-  // this.getStarsOfMovies(this.selectedItem.vote_average)
+    localStorage.setItem('selectedMovie', JSON.stringify(item));
+    this.redirectToDetailView();
   }
-  
-
 
   redirectToDetailView() {
     this.router.navigate(['/movie-detail']);
   }
 
-  getGenres(genreIds: number[]): string {
-    return genreIds.map((id) => this.genresMap[id]).join(', ');
-  }
-
-  getStarsOfMovies(stars: number): any {
-    const decimalPart = stars - Math.floor(stars);
-    const integerPart = Math.floor(stars);
-    const starsArray: number[] = [];
-
-  if (decimalPart > 0) {
-    starsArray.push(Number(decimalPart.toFixed(1)));
-  }
-  if (integerPart > 0) {
-     for (let i = 1; i <= integerPart; i++) {
-      starsArray.push(i);
-    }
-  }
-    this.stars.push(...starsArray);
-
-    return starsArray;
-  }
-
-  handleOrderChange(event: any) {
-    const selectedValue = event.target.value;
-    if (selectedValue === 'ASC') {
-      this.getDataAsc();
-    } else if (selectedValue === 'DESC') {
-      this.getDataAsc();
-    } 
-  }
-
   getDataAsc() {
-    this.sharedService.updateFilteredData(this.filteredData.reverse());
+    this.sharedService.updateFilteredData(this.dataAllPages.reverse());
   }
 }

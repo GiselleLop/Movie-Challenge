@@ -1,0 +1,8 @@
+<select *ngIf="genres" (change)="filterData($event)">
+    <option value="All">All</option>
+    <option *ngFor="let genre of genres.genres" [value]="genre.id">{{ genre.name }}</option>
+</select>
+
+<select *ngIf="narmeByOrder" (change)="filterData($event)">
+    <option *ngFor="let order of narmeByOrder" [value]="order">{{ order }}</option>
+</select>

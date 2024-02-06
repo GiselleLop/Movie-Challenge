@@ -14,6 +14,8 @@ import { ViewDetailComponent } from './view/view-detail/view-detail.component';
 import { BodyDetailComponent } from './component/body-detail/body-detail.component';
 import { MovieComponent } from './component/movie/movie.component';
 import { ButtonsComponent } from './component/buttons/buttons.component';
+import { FilterComponent } from './component/filter/filter.component';
+import { SelectFilterComponent } from './component/select-filter/select-filter.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ButtonsComponent } from './component/buttons/buttons.component';
     BodyDetailComponent,
     MovieComponent,
     ButtonsComponent,
+    FilterComponent,
+    SelectFilterComponent,
   ],
   imports: [
     BrowserModule,

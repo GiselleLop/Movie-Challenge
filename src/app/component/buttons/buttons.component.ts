@@ -7,8 +7,10 @@ import { Input } from '@angular/core';
   styleUrls: ['./buttons.component.css']
 })
 export class ButtonsComponent implements OnInit {
-@Input() btnName: string | undefined
-@Input() btnClass: string | undefined
+@Input() btnName: string | undefined | number 
+@Input() btnClass: string | undefined = ''
+@Input() btnSelected: number | undefined
+
   constructor() { }
 
   ngOnInit(): void {
