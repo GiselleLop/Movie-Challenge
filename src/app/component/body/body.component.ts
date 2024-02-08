@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./body.component.css'],
 })
 export class BodyComponent implements OnInit, OnDestroy {
-  private AllDataSubscription: Subscription | undefined;
-
+  dataSubscription: Subscription = new Subscription();
+  
   currentPage: number = 1;
   dataAllPages: movie[] = [];
   dataPeerPage: movie[] = [];
@@ -28,14 +28,13 @@ export class BodyComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+this.dataSubscription = this.movieService.getDataAllPages().subscribe((data) => {
+  this.dataAllPages = data.flat();
+ this.dataPrincipal = data.flat();
+  this.moviesPeerPage()
+ });
 
-    this.movieService.getDataAllPages().subscribe((data) => {
-      this.dataAllPages = data.flat();
-     this.dataPrincipal = data.flat();
-      this.moviesPeerPage()
-      console.log(this.dataPeerPage);
-     });
-
+   
      this.sharedService.pageSelected$.subscribe((page) => {
       this.pageSelected = page;
    this.moviesPeerPage()
@@ -54,13 +53,8 @@ export class BodyComponent implements OnInit, OnDestroy {
         this.dataAllPages = this.filterService.filterByGenre(
           this.dataPrincipal,
           gender)
-       
-        if (this.dataAllPages.length === 0) {
-          alert('No movies were found with this genre');
-        }
         this.sharedService.updateFilteredData(this.dataAllPages);
-        
-      }
+      }  
       else if (gender === 'ASC' || gender === 'DESC') {
       this.getDataAsc()
       }
@@ -68,7 +62,9 @@ export class BodyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.AllDataSubscription?.unsubscribe();
+    if (this.dataSubscription) {
+      this.dataSubscription.unsubscribe();
+    }
   }
 
   moviesPeerPage() {
