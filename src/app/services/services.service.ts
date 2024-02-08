@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, mergeMap,  expand, map, take, toArray } from 'rxjs';
-
+import { movie } from '../interfaces/movie';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,7 +19,7 @@ export class MovieService {
     return of(updateUrl).pipe(mergeMap((url) => this.http.get<any>(url)));
   }
 
-  public getDataAllPages(): Observable<any[]> { 
+  public getDataAllPages(): Observable<movie[]> { 
     const initialPage = 1;
     const maxPages = 30; 
     return this.getData(initialPage).pipe(
@@ -32,6 +32,7 @@ export class MovieService {
       toArray(),
     );
   }
+
 
   public getGenres(): Observable<[]> {
     return this.http.get(this.MOVIE_GENRES) as Observable<[]>;
