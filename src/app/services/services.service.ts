@@ -34,7 +34,7 @@ export class MovieService {
   }
 
 
-  public getGenres(): Observable<[]> {
-    return this.http.get(this.MOVIE_GENRES) as Observable<[]>;
+  public getGenres(): Observable<any> {
+    return this.http.get(this.MOVIE_GENRES) as Observable<any>;
   }
 }

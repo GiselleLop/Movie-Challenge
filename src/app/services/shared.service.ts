@@ -12,8 +12,8 @@ export class SharedService {
     return this.currentPage;
   }
   
-  filterByGenre(genres:any[], type: number) {
-    return genres.filter((element:any) => element.includes(type));
+  filterByGenre(genres: any[], type: number): any[] {
+    return genres.filter((element: any) => element.id === type);
   }
 
   pageSelectedSubject = new BehaviorSubject<number>(1);

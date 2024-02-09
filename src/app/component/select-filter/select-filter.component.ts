@@ -11,7 +11,7 @@ constructor(private filterService:FilterService) {
 }
 
 @Input() optionsGenre:{ [key: number]: string } = {};
-@Input() genres:any = null
+@Input() genres: any = null
 @Input() narmeByOrder:undefined | string[] = undefined
 
   ngOnInit(): void {}

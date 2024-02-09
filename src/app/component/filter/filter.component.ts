@@ -16,6 +16,8 @@ orderFilters: string[] = ['DESC' ,'ASC']
 
   ngOnInit(): void {
    this.genresSubscription = this.movieService.getGenres().subscribe((genres) => {
+    console.log(genres, 'genres');
+    
       this.genres = genres;
       this.genres.genres.forEach((genre: { id: number; name: string }) => {
         this.genresMap[genre.id] = genre.name;
