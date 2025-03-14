@@ -2,20 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MovieService } from './services/services.service';
+import { MovieService } from './services/movie.service';
 import { AppComponent } from './app.component';
-import { BodyComponent } from './component/body/body.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { HeaderComponent } from './component/header/header.component';
-import { ViewPrincipalComponent } from './view/view-principal/view-principal.component';
+import { BodyComponent } from './view/Home/components/Body/body.component';
+import { FooterComponent } from './view/Home/components/Footer/footer.component';
+import { HeaderComponent } from './view/Home/components/Header/header.component';
+import { ViewPrincipalComponent } from './view/Home/view-principal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedService } from './services/shared.service';
-import { ViewDetailComponent } from './view/view-detail/view-detail.component';
+import { ViewDetailComponent } from './view/Detail/view-detail.component';
 import { BodyDetailComponent } from './component/body-detail/body-detail.component';
-import { MovieComponent } from './component/movie/movie.component';
-import { ButtonsComponent } from './component/buttons/buttons.component';
-import { FilterComponent } from './component/filter/filter.component';
-import { SelectFilterComponent } from './component/select-filter/select-filter.component';
+import { MovieComponent } from './view/Home/components/Body/components/Movie/movie.component';
+import { FilterComponent } from './view/Home/components/Body/components/Filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +25,7 @@ import { SelectFilterComponent } from './component/select-filter/select-filter.c
     ViewDetailComponent,
     BodyDetailComponent,
     MovieComponent,
-    ButtonsComponent,
     FilterComponent,
-    SelectFilterComponent,
   ],
   imports: [
     BrowserModule,

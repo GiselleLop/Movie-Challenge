@@ -1,0 +1,5 @@
+<main class='footer-page'>
+    <div class="pagination">
+        <button *ngFor="let page of pages" [ngClass]="{'pageItemSelected': page === pageSelected, 'pageItem': page !== pageSelected}" (click)="changePage(page)">{{page}}</button>
+    </div>
+</main>

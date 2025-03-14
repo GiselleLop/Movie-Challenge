@@ -1,14 +1,40 @@
 
 <div class="selectedFirst">
-    <app-buttons [btnName]="'Back to movie list'" [btnClass]="'btn-back'" (click)="backToMovies()"></app-buttons>
-  <div class="selected-item">
-    <img src='https://image.tmdb.org/t/p/original/{{selectedItem?.poster_path}}' class="posterSelected">
-      <div class="infoSelected">
-        <h4 class="titleSelected">{{ selectedItem?.original_title }}</h4>
-        <h4 class="textSelected">Release year:<h4 class="selectedContentText"> {{selectedItem?.release_date}}</h4></h4>
-         <!-- <h4  class="textSelected">Genres:<h4 class="selectedContentText"> {{getGenres(selectedItem?.genre_ids)}}</h4></h4>  -->
-        <h4  class="textSelected">Overview:<h4 class="selectedContentText"> {{selectedItem?.overview}}</h4></h4>
-        <h4  class="textSelected">Stars:<h4 class="selectedContentText"> {{selectedItem?.vote_average}}</h4></h4>
+    <button class="back_button"  (click)="backToMovies()">
+      <img src="../../../assets/images/left-arrow.png">
+    </button>
+
+    <div class="selected-item">
+      <div class="poster_movie_container">
+        
+        <img [src]="getMovieImage()" class="posterImage">
+        <div class="rating-overlay">
+          <img src="../../../assets/images/star.png">
+          <h1 class="star_rate_text">
+            {{ selectedItem?.vote_average?.toFixed(1) }}
+          </h1> 
+        </div>
+      </div>
+      
+      <div class="info_container">
+        <div class="container_data_info">
+          <h4 class="titleSelected">{{selectedItem?.original_title}} ({{movieAge}})</h4>
+
+          <div class="subtitle_content">
+            <h4 class="subTitle">Release year:</h4>
+            <h4 class="text_info"> {{selectedItem?.release_date}}</h4>
+          </div>
+  
+          <div class="subtitle_content">
+            <h4 class="subTitle">Genres:</h4>
+            <h4 class="text_info"> {{movieGender}}</h4>
+          </div>
+  
+          <div class="subtitle_content">
+            <h4  class="subTitle">Overview:</h4>
+            <h4 class="text_info"> {{selectedItem?.overview}}</h4>
+          </div>
+        </div>
       </div>
   </div>
   </div>

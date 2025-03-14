@@ -1,0 +1,42 @@
+.footer-page {
+    color: white;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    gap: 5px;
+    align-self: flex-end;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+
+.pagination {
+    gap: 10px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+
+.pageItem, .pageItemSelected {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.7px;
+    padding: 2px 5px;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.pageItemSelected {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.pageItem {
+    background-color: rgba(255, 255, 255, 0.311);
+    color: white;
+}
+button:hover {
+    transition:0.2s;
+    transform: scale(1.2);
+}

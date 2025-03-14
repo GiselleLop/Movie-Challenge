@@ -1,0 +1,49 @@
+.moviesContainer {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(5, 180px);
+    grid-auto-rows: minmax(auto, 320px);
+    grid-gap: 25px;
+    place-content: center;
+}
+
+app-movie {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: start;
+    border-radius: 10px;
+    transition: transform .2s; 
+    position: relative;
+    z-index: 1;
+}
+
+app-movie:hover {
+    box-shadow: 0px 0px 9px 4px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 0px 9px 4px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 9px 4px rgba(255,255,255,1);
+    transform: scale(1.03);
+}
+
+app-filter {
+    // background-color: aqua;
+    width: 78%;
+    display: flex;
+    margin-bottom:2%;
+    gap: 10px;
+    flex-direction: row;
+    color: white;
+    // place-content:initial;
+    place-content: center;
+    // font-size: 18px;
+    font-family: light;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}

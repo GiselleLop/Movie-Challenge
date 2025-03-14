@@ -1,0 +1,125 @@
+.selectedFirst {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster_movie_container {
+    width: auto;
+    height: 78%;
+    border-radius: 10px;
+    border: 4px solid rgb(255, 255, 255);    
+    position: relative;
+    z-index: 1;
+}
+.posterImage {
+    border-radius: 10px;
+    height: 100%;
+}
+
+.rating-overlay {
+    position: absolute;
+    top: 110px;
+    right: 55px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .star_rate_text {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    font-size: 36px;
+    color: black;
+  }
+
+  .poster_movie_container:hover .rating-overlay {
+    opacity: 1;
+  }
+  .poster_movie_container:hover .posterImage {
+    opacity: 0.4; 
+  }
+  
+.info_container {
+    width:55%;
+    height: 78%;
+    border-radius: 10px;
+    border: 4px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_data_info {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    width: 96%;
+    color: white;
+    gap: 5px;
+    overflow-y: auto;
+}
+
+
+.titleSelected {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-size: 38px;
+    word-spacing: 0.10em;
+    letter-spacing: 1.8px;
+}
+.subtitle_content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.subTitle{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+    word-spacing: 0.25em;
+    letter-spacing: 1px;
+}
+     
+.text_info {
+    font-weight: 100;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+}
+
+.back_button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 45px;
+    left: 140px;
+}
+
+.back_button>img {
+    width: 100%;
+    height: 100%;
+}
+
+.back_button:hover {
+    transition:0.2s;
+    transform: scale(1.2);
+}

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing'; 
-import { MovieService } from './services.service';
+import { MovieService } from './movie.service';
 import { TestScheduler } from 'rxjs/testing';
 
 describe('ServicesService', () => {

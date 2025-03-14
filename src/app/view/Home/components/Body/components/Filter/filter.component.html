@@ -1,0 +1,24 @@
+<div class="container_search">
+  <img href="#" src="../../../../../../../assets/images/search.png" class="search_img"/>
+  <input type="search" class="input_search" placeholder="Enter the movie's name"  [(ngModel)]="searchTerm"
+  (keyup.enter)="onSearchMovie()"/>
+</div>
+
+<div class="container_filters_main">
+  <div class="filtersContainer">
+    <h4>Filter by genre</h4>
+    <select (change)="filterData('genre', $event)" [(ngModel)]="selectedGenre">
+      <option value="All">All</option>
+      <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+    </select>
+  </div>
+  
+  <div class="filtersContainer">
+    <h4>Filter by order</h4>
+    <select (change)="filterData('order', $event)" [(ngModel)]="selectedOrder">
+      <option *ngFor="let order of orderFilters" [value]="order">{{ order }}</option>
+    </select>
+  </div>
+  
+  <button (click)="clearFilter()">Clear</button>
+</div>
