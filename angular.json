@@ -97,5 +97,8 @@
       }
     }
   },
-  "defaultProject": "movieChallenge"
+  "defaultProject": "movieChallenge",
+  "cli": {
+    "analytics": "8d45f01e-9b26-4d7f-bfdb-6beb4ed08f43"
+  }
 }

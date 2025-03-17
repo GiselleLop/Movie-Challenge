@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/services/shared.service';
-
+// import a from './view-principal.component.scss'
 @Component({
   selector: 'app-view-principal',
   templateUrl: './view-principal.component.html',

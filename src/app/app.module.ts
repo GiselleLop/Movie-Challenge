@@ -14,6 +14,8 @@ import { ViewDetailComponent } from './view/Detail/view-detail.component';
 import { BodyDetailComponent } from './component/body-detail/body-detail.component';
 import { MovieComponent } from './view/Home/components/Body/components/Movie/movie.component';
 import { FilterComponent } from './view/Home/components/Body/components/Filter/filter.component';
+// import { PaginatorModule } from 'primeng/paginator'; 
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FilterComponent } from './view/Home/components/Body/components/Filter/f
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    // PaginatorModule,
+    CommonModule
   ],
   providers: [MovieService, SharedService],
   bootstrap: [AppComponent]

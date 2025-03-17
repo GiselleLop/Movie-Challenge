@@ -55,7 +55,7 @@ export class FilterService {
     }
   
     return data.filter(movie =>
-      movie.title.toLowerCase().includes(nameMovie.toLowerCase())
+      movie.original_title.toLowerCase().includes(nameMovie.toLowerCase())
     );
   }
 }

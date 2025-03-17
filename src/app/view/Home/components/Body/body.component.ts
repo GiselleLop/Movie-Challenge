@@ -30,8 +30,14 @@ export class BodyComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.add(
       this.movieService.getDataAllPages().subscribe((data) => {
-        this.dataAllPages = data.flat();
-        this.dataPrincipal = data.flat();
+        console.log(data);
+
+        this.dataAllPages = data.flat().filter((movie, index, self) =>
+          index === self.findIndex(m => m.id === movie.id)
+        );
+        this.dataPrincipal = [...this.dataAllPages]; 
+        // this.dataAllPages = data.flat();
+        // this.dataPrincipal = data.flat();
         this.moviesPeerPage()
       })
     ); 
@@ -56,7 +62,7 @@ export class BodyComponent implements OnInit, OnDestroy {
           this.dataAllPages = this.dataPrincipal;
           this.sharedService.updateFilteredData(this.dataAllPages);
         } else if (!isNaN(Number(gender))){
-          this.dataAllPages = this.filterService.filterByGenre(this.dataPrincipal,gender)
+          this.dataAllPages = this.filterService.filterByGenre(this.dataPrincipal, gender)
           this.sharedService.updateFilteredData(this.dataAllPages);
         }
       })

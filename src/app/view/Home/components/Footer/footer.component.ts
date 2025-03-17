@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { MovieService } from 'src/app/services/movie.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { movie } from 'src/app/interfaces/movie';
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
