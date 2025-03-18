@@ -28,7 +28,6 @@ dataSubscription: Subscription = new Subscription()
   ngOnInit(): void {
     this.subscriptions.add(
       this.sharedService.pageSelected$.subscribe((page) => {
-        console.log(page, "           page selected");        
         this.pageSelected = page;
       })
     )
@@ -58,8 +57,6 @@ dataSubscription: Subscription = new Subscription()
 
   onPageChange(event: any) {    
     this.pageSelected = event.page;
-    console.log('Página actual:', event.page);
     this.sharedService.pageSelectedSubject.next(this.pageSelected )
-
   }
 }

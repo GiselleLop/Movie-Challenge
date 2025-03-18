@@ -11,12 +11,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    // place-content: center;
     height: 100%;
     width: 100%;
     align-items: center;
     justify-content: normal;
-
     overflow: scroll;
     margin: 25px 0 0 0;
 }
@@ -35,15 +33,9 @@
 }
 
 .rating-overlay {
-    // position: absolute;
-    // top: 110px;
-    // right: 55px;
-    // opacity: 0;
-    // transition: opacity 0.3s ease-in-out;
     position: absolute;
     top: 0;
     right: 0;
-    /* right: 55px; */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     width: 100%;
@@ -51,21 +43,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-//   .img_star {
-// height: 30%;
+}
 
-//   }
-
-  .star_rate_text {
+.star_rate_text {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 900;
     position: absolute;
-    // top: 45px;
-    // left: 40px;
-    // top: 46%;
-    // left: 42%;
-    // background-color: aqua;
     padding-top: 10px;
     width: 100%;
     height: 100%;
@@ -74,14 +57,15 @@
     justify-content: center;
     font-size: 36px;
     color: black;
-  }
+}
 
-  .poster_movie_container:hover .rating-overlay {
+.poster_movie_container:hover .rating-overlay {
     opacity: 1;
-  }
-  .poster_movie_container:hover .posterImage {
+}
+
+.poster_movie_container:hover .posterImage {
     opacity: 0.4; 
-  }
+}
   
 .info_container {
     width:75%;
@@ -112,15 +96,17 @@
     word-spacing: 0.10em;
     letter-spacing: 1.8px;
 }
+
 .subtitle_content {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
+
 .subTitle{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
-    font-size: 23px;
+    font-size: 20px;
     word-spacing: 0.25em;
     letter-spacing: 1px;
 }
@@ -151,34 +137,36 @@
     transform: scale(1.2);
 }
 
-
-
 //tablets
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .back_button {
         width: 50px;
-    height: 50px;
+        height: 50px;
         top: 40px;
         left: 40px;
     }
+    
     .poster_movie_container {
-        // width: auto;
         height: 50%;
-        }
-        .titleSelected {
- 
-            font-size: 38px;
-          
-        }
-        .info_container {
-            width:65%;
-            height: 40%;
+    }
         
-        }
-        .selected-item {
-            margin: 0 0 0 0;
-            justify-content: center;
-        }
+    .titleSelected {
+        font-size: 38px;  
+    }
+        
+    .info_container {
+        width:65%;
+        height: 40%;
+    }
+    
+    .selected-item {
+        margin: 0 0 0 0;
+        justify-content: center;
+    }
+
+    .subTitle{
+        font-size: 23px;
+    }
 }
 
 //pc
@@ -197,24 +185,24 @@
     }
     
     .poster_movie_container {
-        // width: auto;
         height: 78%;
-        }
+    }
       
-.info_container {
-    width:55%;
-    height: 78%;
 
-}
-.titleSelected {
- 
-    font-size: 38px;
-  
-}
-.container_data_info {
-  
-    width: 96%;
+    .info_container {
+        width:55%;
+        height: 78%;
+    }
 
-}
+    .titleSelected { 
+        font-size: 38px;
+    }
 
+    .container_data_info {
+        width: 96%;
+    }
+
+    .subTitle{
+        font-size: 23px;
+    }     
 }
