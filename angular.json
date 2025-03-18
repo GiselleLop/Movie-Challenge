@@ -27,8 +27,11 @@
               "src/assets"
             ],
             "styles": [
-  "src/styles.scss"
-],
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -97,7 +100,6 @@
       }
     }
   },
-  "defaultProject": "movieChallenge",
   "cli": {
     "analytics": "8d45f01e-9b26-4d7f-bfdb-6beb4ed08f43"
   }

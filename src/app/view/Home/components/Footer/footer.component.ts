@@ -10,9 +10,12 @@ import { movie } from 'src/app/interfaces/movie';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit, OnDestroy {
+  private subscriptions: Subscription = new Subscription();
+
 dataSubscription: Subscription = new Subscription()
   totalItems: number = 0;
-  pageSelected: number = 1;
+  pageSelected: number = 0;
+
   totalPages: number = 0;
   pages: number[] = [];
   displayData: movie[] = [];
@@ -23,10 +26,16 @@ dataSubscription: Subscription = new Subscription()
   ) {}
 
   ngOnInit(): void {
-    
+    this.subscriptions.add(
+      this.sharedService.pageSelected$.subscribe((page) => {
+        console.log(page, "           page selected");        
+        this.pageSelected = page;
+      })
+    )
+
     this.sharedService.filteredData$.subscribe((filteredData) => {
       this.totalItems = filteredData.flat().length;
-    this.updatePagination();
+      this.updatePagination();
     })
 
     this.dataSubscription = this.movieService.getDataAllPages().subscribe((data) => {
@@ -43,11 +52,14 @@ dataSubscription: Subscription = new Subscription()
   
   updatePagination() {
     this.totalPages = Math.ceil(this.totalItems / 20);
-    this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+    this.pages = Array.from({ length: this.totalPages }, (_, i) => i );
   }
 
-  changePage(page: number) {
-    this.pageSelected = page
-    this.sharedService.pageSelectedSubject.next(page)
+
+  onPageChange(event: any) {    
+    this.pageSelected = event.page;
+    console.log('Página actual:', event.page);
+    this.sharedService.pageSelectedSubject.next(this.pageSelected )
+
   }
 }

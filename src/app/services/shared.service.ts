@@ -12,14 +12,16 @@ export class SharedService {
     return this.currentPage;
   }
 
-  pageSelectedSubject = new BehaviorSubject<number>(1);
+  pageSelectedSubject = new BehaviorSubject<number>(0);
   pageSelected$ = this.pageSelectedSubject.asObservable();
   
   private filteredDataSubject = new BehaviorSubject<movie[]>([]);
   filteredData$ = this.filteredDataSubject.asObservable();
 
   paginatorData(pageSelected:number, data:movie[]) {
-    const start = (pageSelected - 1) * 20;
+    // const start = (pageSelected - 1) * 20;
+    const start = (pageSelected ) * 20;
+
     const end = start + 20;
     return data.slice(start, end);
   }

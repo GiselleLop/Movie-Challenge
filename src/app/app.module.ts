@@ -14,7 +14,9 @@ import { ViewDetailComponent } from './view/Detail/view-detail.component';
 import { BodyDetailComponent } from './component/body-detail/body-detail.component';
 import { MovieComponent } from './view/Home/components/Body/components/Movie/movie.component';
 import { FilterComponent } from './view/Home/components/Body/components/Filter/filter.component';
-// import { PaginatorModule } from 'primeng/paginator'; 
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
+
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -34,7 +36,8 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    // PaginatorModule,
+    TableModule,
+    PaginatorModule,
     CommonModule
   ],
   providers: [MovieService, SharedService],

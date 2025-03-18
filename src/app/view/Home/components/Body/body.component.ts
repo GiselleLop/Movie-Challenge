@@ -17,7 +17,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   currentPage: number = 1;
   dataAllPages: movie[] = [];
   dataPeerPage: movie[] = [];
-  pageSelected: number = 1;
+  pageSelected: number = 0;
   dataPrincipal: movie[] = [];
 
   constructor(
@@ -92,6 +92,8 @@ export class BodyComponent implements OnInit, OnDestroy {
       this.pageSelected,
       this.dataAllPages
     );
+    console.log(this.dataPeerPage, 'dtavpeeerr');
+    
   }
 
   viewDetailMovie(item: movie) {

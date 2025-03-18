@@ -1,42 +1,69 @@
 .footer-page {
-    color: white;
     display: flex;
     place-content: center;
     align-items: center;
-    gap: 5px;
-    align-self: flex-end;
-    margin-top: 2%;
-    padding-bottom: 2%;
+    margin-top: 4%;
+    padding-bottom: 4%;
 }
 
-.pagination {
-    gap: 10px;
-    display: flex;
-    place-content: center;
-    align-items: center;
-}
-
-.pageItem, .pageItemSelected {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 0.7px;
-    padding: 2px 5px;
-    border: none;
-    font-size: 20px;
-    border-radius: 5px;
-}
-
-.pageItemSelected {
-    background-color: rgb(255, 255, 255);
+  ::ng-deep .p-paginator {
+    background-color: rgba(255, 255, 255, 0.507);
+  }
+  ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
     color: rgb(0, 0, 0);
-}
-
-.pageItem {
-    background-color: rgba(255, 255, 255, 0.311);
+    min-width: 2rem;
+    height: 2rem;
+  }
+  
+  ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background-color: #000000;
     color: white;
+    min-width: 2rem;
+    height: 2rem;
+  }
+  ::ng-deep .p-paginator .p-paginator-first,  ::ng-deep .p-paginator .p-paginator-prev,   ::ng-deep .p-paginator .p-paginator-next,   ::ng-deep .p-paginator .p-paginator-last {
+    color: #000000;
+    min-width: 1.5rem;
+    height: 1.5rem;
+  }
+//tablets
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    ::ng-deep .p-paginator .p-paginator-first,  ::ng-deep .p-paginator .p-paginator-prev,   ::ng-deep .p-paginator .p-paginator-next,   ::ng-deep .p-paginator .p-paginator-last {
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+      
+    ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+    .footer-page {
+        margin-top: 4%;
+        padding-bottom: 3%;
+    }
 }
-button:hover {
-    transition:0.2s;
-    transform: scale(1.2);
-}
+  @media only screen and (min-width: 1025px) {
+    ::ng-deep .p-paginator .p-paginator-first,  ::ng-deep .p-paginator .p-paginator-prev,   ::ng-deep .p-paginator .p-paginator-next,   ::ng-deep .p-paginator .p-paginator-last {
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+      
+    ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+    .footer-page {
+        margin-top: 2%;
+        padding-bottom: 2%;
+    }
+  }
