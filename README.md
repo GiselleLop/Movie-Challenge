@@ -1,7 +1,7 @@
 
 # Movie Challenge
 
-![image]()
+![image](https://github.com/GiselleLop/Movie-Challenge/blob/main/src/assets/images/Wireframe.png)
 
 ## Project Description:
 
@@ -16,10 +16,10 @@ Users can also access detailed information about each movie by clicking on it.
  ## General Features:
  
 - Users can search for movies by name using the implemented search bar.
--They can also filter movies by category and sort them by popularity.
--Search filters can be easily reset with a single click on the "Clear" button.
--To enhance the browsing experience, a dynamic paginator has been implemented.
--Additionally, users can access detailed information about a movie by clicking on it.
+- They can also filter movies by category and sort them by popularity.
+- Search filters can be easily reset with a single click on the "Clear" button.
+- To enhance the browsing experience, a dynamic paginator has been implemented.
+- Additionally, users can access detailed information about a movie by clicking on it.
 
 
 
