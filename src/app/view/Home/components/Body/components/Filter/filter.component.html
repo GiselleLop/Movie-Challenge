@@ -6,7 +6,7 @@
 
 <div class="container_filters_main">
   <div class="filtersContainer">
-    <h4>Filter by genre</h4>
+    <h4>Genre</h4>
     <select (change)="filterData('genre', $event)" [(ngModel)]="selectedGenre">
       <option value="All">All</option>
       <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
@@ -14,7 +14,7 @@
   </div>
   
   <div class="filtersContainer">
-    <h4>Filter by order</h4>
+    <h4>Order</h4>
     <select (change)="filterData('order', $event)" [(ngModel)]="selectedOrder">
       <option *ngFor="let order of orderFilters" [value]="order">{{ order }}</option>
     </select>

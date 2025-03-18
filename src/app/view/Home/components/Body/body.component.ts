@@ -17,7 +17,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   currentPage: number = 1;
   dataAllPages: movie[] = [];
   dataPeerPage: movie[] = [];
-  pageSelected: number = 1;
+  pageSelected: number = 0;
   dataPrincipal: movie[] = [];
 
   constructor(
@@ -30,8 +30,10 @@ export class BodyComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.add(
       this.movieService.getDataAllPages().subscribe((data) => {
-        this.dataAllPages = data.flat();
-        this.dataPrincipal = data.flat();
+        this.dataAllPages = data.flat().filter((movie, index, self) =>
+          index === self.findIndex(m => m.id === movie.id)
+        );
+        this.dataPrincipal = [...this.dataAllPages]; 
         this.moviesPeerPage()
       })
     ); 
@@ -56,7 +58,7 @@ export class BodyComponent implements OnInit, OnDestroy {
           this.dataAllPages = this.dataPrincipal;
           this.sharedService.updateFilteredData(this.dataAllPages);
         } else if (!isNaN(Number(gender))){
-          this.dataAllPages = this.filterService.filterByGenre(this.dataPrincipal,gender)
+          this.dataAllPages = this.filterService.filterByGenre(this.dataPrincipal, gender)
           this.sharedService.updateFilteredData(this.dataAllPages);
         }
       })
@@ -85,7 +87,7 @@ export class BodyComponent implements OnInit, OnDestroy {
     this.dataPeerPage = this.sharedService.paginatorData(
       this.pageSelected,
       this.dataAllPages
-    );
+    );    
   }
 
   viewDetailMovie(item: movie) {

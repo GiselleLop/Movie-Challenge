@@ -3,6 +3,8 @@
   alt="Movie Poster"
   (error)="onImageError($event)"> 
 <div class="infoCard">
-  <h1>{{ movie?.original_title }}</h1>
+  <div #titleContainer class="title-container">
+    <h1 #movieTitle>{{ movie?.original_title }}</h1>
+  </div>
   <h4>{{movie?.release_date}}</h4>
 </div>

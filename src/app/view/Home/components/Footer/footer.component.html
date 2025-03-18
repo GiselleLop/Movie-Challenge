@@ -1,5 +1,10 @@
 <main class='footer-page'>
-    <div class="pagination">
-        <button *ngFor="let page of pages" [ngClass]="{'pageItemSelected': page === pageSelected, 'pageItem': page !== pageSelected}" (click)="changePage(page)">{{page}}</button>
-    </div>
+  <p-paginator
+    (onPageChange)="onPageChange($event)" 
+    [first]="pageSelected * 20"  
+    [rows]="20" 
+    [totalRecords]="totalItems" 
+  >
+  </p-paginator>
+
 </main>

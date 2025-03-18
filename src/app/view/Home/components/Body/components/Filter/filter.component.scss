@@ -7,8 +7,9 @@ app-select-filter {
     flex-direction: row;
     border-radius: 20px;
     height: 30px;
-    width: 40%;
+    width: 100%;
     align-items: center;
+    justify-content: center;
     padding: 0 10px;
     background-color: rgba(255, 255, 255, 0.405);
     gap: 10px;
@@ -22,9 +23,7 @@ app-select-filter {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     width: 100%;
-    // height: 100%;
     border-radius: 10px;
-    // padding: 0px 10px;
     border: none;
     outline: none;
     background-color: transparent;
@@ -36,8 +35,7 @@ app-select-filter {
 .container_filters_main {
     display: flex;
     flex-direction: row;
-    font-size: 18px;
-    gap: 15px;
+    gap: 10px;
 }
 
 .filtersContainer {
@@ -45,24 +43,35 @@ app-select-filter {
     align-items: center;
     flex-direction: row;
     gap: 5px;
-    letter-spacing: 2px;
+   
 }
-
+.filtersContainer>h4 {
+    letter-spacing: 1px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
 select {
     border-radius: 10px;
     opacity: 0.8;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: 16px;
+    width: 60px;
 }
-    
+
+option {
+    font-size: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 button {
     display: flex;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
-    font-size: 20px;
-    padding: 0 12px;
+    font-size: 18px;
+    padding: 0 10px;
     align-items: center;
     justify-content: center;
     background-color: white;
@@ -75,3 +84,56 @@ button:hover {
     transform: scale(1.03);
 }
        
+
+//tablets
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container_search {
+        width: 60%;
+    }
+    .input_search {
+        font-size: 25px;
+    }
+    button {
+        font-size: 25px;
+    }
+    
+    select {
+        font-size: 18px;
+        width: auto;
+    }
+          
+    option {
+        font-size: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .filtersContainer>h4 {
+        font-size: 25px;
+    }
+    .container_filters_main {
+        gap: 15px;
+    }
+}
+
+//pc
+@media only screen and (min-width: 1025px) {
+    .container_search {
+        width: 55%;
+    }
+    button {
+        
+        font-size: 20px;}
+  select {
+    font-size: 18px;
+    width: auto;
+  }
+  
+option {
+    font-size: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.container_filters_main {
+    gap: 15px;
+}
+}

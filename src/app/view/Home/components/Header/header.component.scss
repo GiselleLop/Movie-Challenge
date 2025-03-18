@@ -3,7 +3,7 @@ display: flex;
 place-content: center;
 align-items: center;
 flex-direction: column;
-margin: 2% 0 1% 0;
+margin: 3% 0 1% 0;
 width: 100%;
 }
 .title {
@@ -13,8 +13,8 @@ width: 100%;
   background: radial-gradient(circle, #fff 0%, rgb(90, 90, 90) 120%);
   background-clip: text;
   -webkit-text-fill-color: transparent;    
-  letter-spacing: 4px;
-  font-size: 60px;
+  letter-spacing: 2px;
+  font-size: 55px;
   animation: glow 2500ms linear infinite 2000ms;
 }
 
@@ -23,3 +23,26 @@ width: 100%;
       text-shadow: 0 0 8px #fff;
     }
   }
+
+
+  //tablets
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .title {
+    font-size: 75px;
+    letter-spacing: 3px;
+  }
+  .header-app {
+    margin: 2% 0 1% 0;
+    }
+}
+
+//pc
+@media only screen and (min-width: 1025px) {
+  .title {
+    font-size: 60px;
+    letter-spacing: 4px;
+  }
+  .header-app {
+    margin: 2% 0 1% 0;
+  }
+}

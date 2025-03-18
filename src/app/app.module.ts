@@ -11,9 +11,13 @@ import { ViewPrincipalComponent } from './view/Home/view-principal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedService } from './services/shared.service';
 import { ViewDetailComponent } from './view/Detail/view-detail.component';
-import { BodyDetailComponent } from './component/body-detail/body-detail.component';
+import { BodyDetailComponent } from './view/Detail/components/body-detail/body-detail.component';
 import { MovieComponent } from './view/Home/components/Body/components/Movie/movie.component';
 import { FilterComponent } from './view/Home/components/Body/components/Filter/filter.component';
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
+
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { FilterComponent } from './view/Home/components/Body/components/Filter/f
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    TableModule,
+    PaginatorModule,
+    CommonModule
   ],
   providers: [MovieService, SharedService],
   bootstrap: [AppComponent]

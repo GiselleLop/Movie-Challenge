@@ -1,33 +1,62 @@
+
+
 img {
-    width: 100%;
-    height: 80%;
-    border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
 }
 
 .infoCard {
-    opacity: 0.6;
-    background-color: white;
-    width: 100%;
-    height: 20%;
-    place-content: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius:  0 0 10px 10px;
-    letter-spacing: 0.5px;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  letter-spacing: 0.5px;
 }
-
+.title-container {
+  width: 90%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center; 
+}
+  
 h1 {
-    font-size: 18px;
-    width: 97%;
-    text-align: center;
-    padding: 0%;
-    margin: 0%;
+  font-size: 18px;
+  white-space: nowrap; 
+  overflow: visible; 
+  width: max-content;
+  text-align: center;
+  animation: none; 
+}
+  
+h1.animated {
+  animation: scrollText 5s linear infinite;
+}
+  
+@keyframes scrollText {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 h4 {
-    margin: 0%;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0%;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+//pc
+@media only screen and (min-width: 1025px) {
+  img {
+    width: 100%;
+    height: 80%;
+  }
+}
+
