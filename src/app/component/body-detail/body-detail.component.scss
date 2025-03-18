@@ -9,18 +9,21 @@
 
 .selected-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
-    place-content: center;
+    // place-content: center;
     height: 100%;
     width: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: normal;
+
+    overflow: scroll;
+    margin: 25px 0 0 0;
 }
 
 .poster_movie_container {
     width: auto;
-    height: 78%;
+    height: 60%;
     border-radius: 10px;
     border: 4px solid rgb(255, 255, 255);    
     position: relative;
@@ -81,7 +84,7 @@
   }
   
 .info_container {
-    width:55%;
+    width:75%;
     height: 78%;
     border-radius: 10px;
     border: 4px solid rgb(255, 255, 255);
@@ -95,7 +98,7 @@
     display: flex;
     flex-direction: column;
     height: 95%;
-    width: 96%;
+    width: 90%;
     color: white;
     gap: 5px;
     overflow-y: auto;
@@ -105,7 +108,7 @@
 .titleSelected {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 900;
-    font-size: 38px;
+    font-size: 30px;
     word-spacing: 0.10em;
     letter-spacing: 1.8px;
 }
@@ -129,13 +132,13 @@
 }
 
 .back_button {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: transparent;
     border: none;
     position: absolute;
-    top: 45px;
-    left: 140px;
+    top: 80px;
+    left: 15px;
 }
 
 .back_button>img {
@@ -146,4 +149,72 @@
 .back_button:hover {
     transition:0.2s;
     transform: scale(1.2);
+}
+
+
+
+//tablets
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .back_button {
+        width: 50px;
+    height: 50px;
+        top: 40px;
+        left: 40px;
+    }
+    .poster_movie_container {
+        // width: auto;
+        height: 50%;
+        }
+        .titleSelected {
+ 
+            font-size: 38px;
+          
+        }
+        .info_container {
+            width:65%;
+            height: 40%;
+        
+        }
+        .selected-item {
+            margin: 0 0 0 0;
+            justify-content: center;
+        }
+}
+
+//pc
+@media only screen and (min-width: 1025px) {
+    .back_button {
+        width: 40px;
+        height: 40px;
+        top: 45px;
+        left: 140px;
+    }
+    .selected-item {
+        flex-direction: row; 
+        overflow:visible;
+        justify-content: center;
+        margin: 0 0 0 0;
+    }
+    
+    .poster_movie_container {
+        // width: auto;
+        height: 78%;
+        }
+      
+.info_container {
+    width:55%;
+    height: 78%;
+
+}
+.titleSelected {
+ 
+    font-size: 38px;
+  
+}
+.container_data_info {
+  
+    width: 96%;
+
+}
+
 }
