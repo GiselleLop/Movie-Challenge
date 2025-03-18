@@ -19,6 +19,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   dataPeerPage: movie[] = [];
   pageSelected: number = 0;
   dataPrincipal: movie[] = [];
+  loading: boolean = false;
 
   constructor(
     private movieService: MovieService,
@@ -28,6 +29,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.loading= true
     this.subscriptions.add(
       this.movieService.getDataAllPages().subscribe((data) => {
         this.dataAllPages = data.flat().filter((movie, index, self) =>
@@ -35,6 +37,7 @@ export class BodyComponent implements OnInit, OnDestroy {
         );
         this.dataPrincipal = [...this.dataAllPages]; 
         this.moviesPeerPage()
+        this.loading = false
       })
     ); 
 
