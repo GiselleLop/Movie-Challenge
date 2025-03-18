@@ -61,10 +61,24 @@ app-filter {
 }
 
 //pc
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1025px) and (max-width: 1535px) {
 
     .moviesContainer {
         grid-template-columns: repeat(5, 180px);
+        grid-auto-rows: minmax(auto, 320px);
+    }
+
+    app-filter {
+        flex-direction: row;
+        margin-bottom:2%;
+    }
+}
+
+//pc 1536px
+@media only screen and (min-width: 1536px) {
+
+    .moviesContainer {
+        grid-template-columns: repeat(6, 180px);
         grid-auto-rows: minmax(auto, 320px);
     }
 
